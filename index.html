@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar {
+            display: grid;
+            justify-items: center;
+        }
+
+        .wrappa {
+            height: 60px;
+            width: 50vw;
+            position: fixed;
+            bottom: 5vh;
+            z-index: 500;
+            text-align: center;
+            background: #fff;
+            line-height: 60px;
+            border-radius: 50px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.25);
+        }
+
+        .wrappa nav {
+            position: relative;
+            display: flex;
+        }
+
+        .wrappa nav label {
+            flex: 1;
+            width: 100%;
+            z-index: 1;
+            cursor: pointer;
+        }
+
+        .wrappa nav label a {
+            position: relative;
+            /* z-index: -1; */
+            color: #1d1f20;
+            font-size: 15px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.6s ease;
+        }
+
+        .wrappa nav #home:checked~label.home a,
+        .wrappa nav #inbox:checked~label.inbox a,
+        .wrappa nav #contact:checked~label.contact a,
+        .wrappa nav #heart:checked~label.heart a,
+        .wrappa nav #about:checked~label.about a {
+            color: #fff;
+        }
+
+        .wrappa nav label a i {
+            font-size: 15px;
+            margin: 0 7px;
+        }
+
+        .wrappa nav .tab {
+            position: absolute;
+            height: 100%;
+            width: 20%;
+            left: 0;
+            bottom: 0;
+            z-index: 0;
+            border-radius: 50px;
+            background: linear-gradient(230deg, black 10%, red 90%);
+            transition: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        .wrappa nav #inbox:checked~.tab {
+            left: 20%;
+        }
+
+        .wrappa nav #contact:checked~.tab {
+            left: 40%;
+        }
+
+        .wrappa nav #heart:checked~.tab {
+            left: 60%;
+        }
+
+        .wrappa nav #about:checked~.tab {
+            left: 80%;
+        }
+
+        .wrappa nav input {
+            display: none;
+        }
+
+        @media only screen and (max-width: 900px) {
+
+            .wrappa {
+                width: 90%;
+            }
+        }
+
+        @media only screen and (max-width: 700px) {
+
+            .wrappa {
+                width: 95%;
+                bottom: 10px;
+            }
+
+            .wrappa nav label a {
+                font-size: 10px;
+            }
+
+            .wrappa nav label a i {
+                font-size: 10px;
+                margin: 0 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="wrappa">
+            <nav>
+                <input type="radio" name="tab" id="home" checked>
+                <input type="radio" name="tab" id="inbox">
+                <input type="radio" name="tab" id="contact">
+                <input type="radio" name="tab" id="heart">
+                <input type="radio" name="tab" id="about">';
+                <label for="home" class="home"><a href="index.php"><i class="fas fa-home"></i>Home</a></label>
+                <label for="inbox" class="inbox"><a href="services.php"><i class="fas fa-tools"></i>Services</a></label>
+                <label for="contact" class="contact"><a href="contact.php"><i
+                            class="far fa-envelope"></i>Contact</a></label>
+                <label for="heart" class="heart"><a href="team.php"><i class="far fa-heart"></i>Team</a></label>
+                <label for="about" class="about"><a href="about.php"><i class="far fa-user"></i>About</a></label>
+                <div class="tab"></div>
+            </nav>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300&display=swap');
+        */
+        /* @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'); */
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: #f2f2f2;
+        }
+
+        .main {
+            background-image: url(backfd.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            text-align: center;
+            display: grid;
+            height: 100vh;
+            align-items: center;
+            color: white;
+            border-radius: 20px;
+            justify-content: center;
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+            background-position: center;
+        }
+
+        .mainn h1 {
+            font-family: 'Dosis', sans-serif;
+            /* font-family: 'Indie Flower', cursive; */
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.4);
+            color: white;
+            font-weight: bold;
+            border: 3px solid #f1f1f1;
+            position: absolute;
+            top: 50%;
+            font-size: 60px;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 2;
+            width: 80%;
+            padding: 20px;
+            text-align: center;
+        }
+
+
+        @media only screen and (max-width: 800px) {
+
+            .main {
+                height: 50vh;
+            }
+
+            .mainn h1 {
+                font-size: 35px;
+                top: 25%;
+            }
+        }
+    </style>
+
+    <div class="main"><img src="image/logo.png" alt="" style="width:50vw;"> </div>
+    <div class="mainn">
+        <h1> Nibor Enterprises</h1>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .container {
+            width: 100%;
+            height: 100%;
+            padding: 0px 8%;
+        }
+
+        .container h1 {
+            text-align: center;
+            padding-top: 50px;
+            margin-bottom: 60px;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .container h1::after {
+            content: '';
+            background: #ff1a1a;
+            width: 100px;
+            height: 5px;
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 30px;
+        }
+
+        .service {
+            text-align: center;
+            padding: 25px 10px;
+            border-radius: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background: transparent;
+            transition: transform 0.5s, background 0.5s;
+        }
+
+        .service i {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: #ff1a1a;
+        }
+
+        .service h2 {
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .service:hover {
+            background: #ff1a1a;
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .service:hover i {
+            color: #fff;
+        }
+
+        @media only screen and (max-width: 700px) {
+            .container {
+                padding: 0px 5%;
+            }
+
+            .row {
+                grid-template-columns: repeat(auto-fit, minmax(105px, 1fr));
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .service p {
+                display: none;
+            }
+        }
+    </style>
+    <div class="container">
+        <h1>Our Services</h1>
+        <div class="row">
+            <a href="repairing.php">
+                <div class="service">
+                    <i class="fas fa-tools"></i>
+                    <h2>Repairing</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+                        quae?
+                    </p>
+                </div>
+            </a>
+            <a href="accessories.php">
+                <div class="service">
+                    <i class="fas fa-mobile"></i>
+                    <h2>Mobile Accessories</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+                        quae?
+                    </p>
+                </div>
+            </a>
+            <a href="courses.php">
+                <div class="service">
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                    <h2>Repairing Course</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+                        quae?
+                    </p>
+                </div>
+            </a>
+            <a href="menu.php?service=Sound System">
+                <div class="service">
+                    <i class="fas fa-headphones"></i>
+                    <h2>Sound System</h2>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi,
+                        quae?
+                    </p>
+                </div>
+            </a>
+        </div>
+    </div>
+    <style>
+        .ag-format-container {
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button.sell {
+            border: none;
+            background: linear-gradient(230deg, black 10%, red 90%);
+            color: white;
+            font-size: 20px;
+            width: 150px;
+            padding: 10px;
+            border-radius: 15px;
+        }
+
+        button.sell:hover {
+            background: black;
+            color: white;
+        }
+
+        img {
+            max-width: 100%;
+        }
+
+        .ag-slide-phone_list {
+            padding: 50px 0;
+            filter: drop-shadow(0 0 30px #636363);
+            position: relative;
+        }
+
+        .ag-slide-phone_item {
+            display: inline-block;
+            width: 230px;
+        }
+
+        .ag-slide-phone_item:first-child {
+            -webkit-transform: translate(70%, 0);
+            -moz-transform: translate(70%, 0);
+            -ms-transform: translate(70%, 0);
+            -o-transform: translate(70%, 0);
+            transform: translate(70%, 0);
+
+            -webkit-animation: an-slide-1 8s ease-in-out 2s infinite normal;
+            -moz-animation: an-slide-1 8s ease-in-out 2s infinite normal;
+            -o-animation: an-slide-1 8s ease-in-out 2s infinite normal;
+            animation: an-slide-1 8s ease-in-out 2s infinite normal;
+
+            z-index: 1;
+            position: relative;
+        }
+
+        .ag-slide-phone_item:nth-child(2) {
+            -webkit-transform: translate(0, -3%);
+            -moz-transform: translate(0, -3%);
+            -ms-transform: translate(0, -3%);
+            -o-transform: translate(0, -3%);
+            transform: translate(0, -3%);
+
+            -webkit-animation: an-slide-2 8s ease-in-out 2s infinite normal;
+            -moz-animation: an-slide-2 8s ease-in-out 2s infinite normal;
+            -o-animation: an-slide-2 8s ease-in-out 2s infinite normal;
+            animation: an-slide-2 8s ease-in-out 2s infinite normal;
+
+            z-index: 3;
+            position: relative;
+        }
+
+        .ag-slide-phone_item:last-child {
+            -webkit-transform: translate(-70%, 0);
+            -moz-transform: translate(-70%, 0);
+            -ms-transform: translate(-70%, 0);
+            -o-transform: translate(-70%, 0);
+            transform: translate(-70%, 0);
+
+            -webkit-animation: an-slide-3 8s ease-in-out 2s infinite normal;
+            -moz-animation: an-slide-3 8s ease-in-out 2s infinite normal;
+            -o-animation: an-slide-3 8s ease-in-out 2s infinite normal;
+            animation: an-slide-3 8s ease-in-out 2s infinite normal;
+
+            z-index: 2;
+            position: relative;
+        }
+
+        @-webkit-keyframes an-slide-1 {
+
+            0%,
+            100% {
+                z-index: 1;
+
+                -webkit-transform: translate(70%, 0);
+                transform: translate(70%, 0);
+            }
+
+            33% {
+                z-index: 2;
+
+                -webkit-transform: translate(133%, 0);
+                transform: translate(133%, 0);
+            }
+
+            66% {
+                z-index: 3;
+
+                -webkit-transform: translate(101%, -3%);
+                transform: translate(101%, -3%);
+            }
+        }
+
+        @-moz-keyframes an-slide-1 {
+
+            0%,
+            100% {
+                z-index: 1;
+
+                -moz-transform: translate(70%, 0);
+                transform: translate(70%, 0);
+            }
+
+            33% {
+                z-index: 2;
+
+                -moz-transform: translate(133%, 0);
+                transform: translate(133%, 0);
+            }
+
+            66% {
+                z-index: 3;
+
+                -moz-transform: translate(101%, -3%);
+                transform: translate(101%, -3%);
+            }
+        }
+
+        @-o-keyframes an-slide-1 {
+
+            0%,
+            100% {
+                z-index: 1;
+
+                -o-transform: translate(70%, 0);
+                transform: translate(70%, 0);
+            }
+
+            33% {
+                z-index: 2;
+
+                -o-transform: translate(133%, 0);
+                transform: translate(133%, 0);
+            }
+
+            66% {
+                z-index: 3;
+
+                -o-transform: translate(101%, -3%);
+                transform: translate(101%, -3%);
+            }
+        }
+
+        @keyframes an-slide-1 {
+
+            0%,
+            100% {
+                z-index: 1;
+
+                -webkit-transform: translate(70%, 0);
+                -moz-transform: translate(70%, 0);
+                -o-transform: translate(70%, 0);
+                transform: translate(70%, 0);
+            }
+
+            33% {
+                z-index: 2;
+
+                -webkit-transform: translate(133%, 0);
+                -moz-transform: translate(133%, 0);
+                -o-transform: translate(133%, 0);
+                transform: translate(133%, 0);
+            }
+
+            66% {
+                z-index: 3;
+
+                -webkit-transform: translate(101%, -3%);
+                -moz-transform: translate(101%, -3%);
+                -o-transform: translate(101%, -3%);
+                transform: translate(101%, -3%);
+            }
+        }
+
+        @-webkit-keyframes an-slide-2 {
+
+            0%,
+            100% {
+                z-index: 3;
+
+                -webkit-transform: translate(0, -3%);
+                transform: translate(0, -3%);
+            }
+
+            33% {
+                z-index: 1;
+
+                -webkit-transform: translate(-32%, 0);
+                transform: translate(-32%, 0);
+            }
+
+            66% {
+                z-index: 2;
+
+                -webkit-transform: translate(31%, 0);
+                transform: translate(31%, 0);
+            }
+        }
+
+        @-moz-keyframes an-slide-2 {
+
+            0%,
+            100% {
+                z-index: 3;
+
+                -moz-transform: translate(0, -3%);
+                transform: translate(0, -3%);
+            }
+
+            33% {
+                z-index: 1;
+
+                -moz-transform: translate(-32%, 0);
+                transform: translate(-32%, 0);
+            }
+
+            66% {
+                z-index: 2;
+
+                -moz-transform: translate(31%, 0);
+                transform: translate(31%, 0);
+            }
+        }
+
+        @-o-keyframes an-slide-2 {
+
+            0%,
+            100% {
+                z-index: 3;
+
+                -o-transform: translate(0, -3%);
+                transform: translate(0, -3%);
+            }
+
+            33% {
+                z-index: 1;
+
+                -o-transform: translate(-32%, 0);
+                transform: translate(-32%, 0);
+            }
+
+            66% {
+                z-index: 2;
+
+                -o-transform: translate(31%, 0);
+                transform: translate(31%, 0);
+            }
+        }
+
+        @keyframes an-slide-2 {
+
+            0%,
+            100% {
+                z-index: 3;
+
+                -webkit-transform: translate(0, -3%);
+                -moz-transform: translate(0, -3%);
+                -o-transform: translate(0, -3%);
+                transform: translate(0, -3%);
+            }
+
+            33% {
+                z-index: 1;
+
+                -webkit-transform: translate(-32%, 0);
+                -moz-transform: translate(-32%, 0);
+                -o-transform: translate(-32%, 0);
+                transform: translate(-32%, 0);
+            }
+
+            66% {
+                z-index: 2;
+
+                -webkit-transform: translate(31%, 0);
+                -moz-transform: translate(31%, 0);
+                -o-transform: translate(31%, 0);
+                transform: translate(31%, 0);
+            }
+        }
+
+        @-webkit-keyframes an-slide-3 {
+
+            0%,
+            100% {
+                z-index: 2;
+
+                -webkit-transform: translate(-70%, 0);
+                transform: translate(-70%, 0);
+            }
+
+            33% {
+                z-index: 3;
+
+                -webkit-transform: translate(-101%, -3%);
+                transform: translate(-101%, -3%);
+            }
+
+            66% {
+                z-index: 1;
+
+                -webkit-transform: translate(-133%, 0);
+                transform: translate(-133%, 0);
+            }
+
+            99% {
+                z-index: 1;
+            }
+        }
+
+        @-moz-keyframes an-slide-3 {
+
+            0%,
+            100% {
+                z-index: 2;
+
+                -moz-transform: translate(-70%, 0);
+                transform: translate(-70%, 0);
+            }
+
+            33% {
+                z-index: 3;
+
+                -moz-transform: translate(-101%, -3%);
+                transform: translate(-101%, -3%);
+            }
+
+            66% {
+                z-index: 1;
+
+                -moz-transform: translate(-133%, 0);
+                transform: translate(-133%, 0);
+            }
+
+            99% {
+                z-index: 1;
+            }
+        }
+
+        @-o-keyframes an-slide-3 {
+
+            0%,
+            100% {
+                z-index: 2;
+
+                -o-transform: translate(-70%, 0);
+                transform: translate(-70%, 0);
+            }
+
+            33% {
+                z-index: 3;
+
+                -o-transform: translate(-101%, -3%);
+                transform: translate(-101%, -3%);
+            }
+
+            66% {
+                z-index: 1;
+
+                -o-transform: translate(-133%, 0);
+                transform: translate(-133%, 0);
+            }
+
+            99% {
+                z-index: 1;
+            }
+        }
+
+        @keyframes an-slide-3 {
+
+            0%,
+            100% {
+                z-index: 2;
+
+                -webkit-transform: translate(-70%, 0);
+                -moz-transform: translate(-70%, 0);
+                -o-transform: translate(-70%, 0);
+                transform: translate(-70%, 0);
+            }
+
+            33% {
+                z-index: 3;
+
+                -webkit-transform: translate(-101%, -3%);
+                -moz-transform: translate(-101%, -3%);
+                -o-transform: translate(-101%, -3%);
+                transform: translate(-101%, -3%);
+            }
+
+            66% {
+                z-index: 1;
+
+                -webkit-transform: translate(-133%, 0);
+                -moz-transform: translate(-133%, 0);
+                -o-transform: translate(-133%, 0);
+                transform: translate(-133%, 0);
+            }
+
+            99% {
+                z-index: 1;
+            }
+        }
+
+        @media only screen and (max-width: 979px) {
+            .ag-slide-phone_item {
+                width: 30%;
+            }
+        }
+
+
+        @media only screen and (max-width: 767px) {
+            .ag-format-container {
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }
+
+            .ag-slide-phone_list {
+                padding: 25px 0;
+            }
+        }
+
+        @media only screen and (max-width: 500px) {
+            .ag-format-container {
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }
+
+            .ag-slide-phone_list {
+                padding: 25px 0;
+            }
+        }
+
+        @media (min-width: 980px) and (max-width: 1161px) {
+            .ag-format-container {
+                margin: 0 auto;
+                display: block;
+                width: 100%;
+            }
+
+        }
+    </style>
+    <div class="ag-format-container">
+        <ul class="ag-slide-phone_list">
+            <li class="ag-slide-phone_item">
+                <img class="ag-slide-phone_img" src="image/image1.png" alt="Slide 3" />
+            </li>
+            <li class="ag-slide-phone_item">
+                <img class="ag-slide-phone_img" src="image/image2.png" alt="Slide 3" />
+            </li>
+            <li class="ag-slide-phone_item">
+                <img class="ag-slide-phone_img" src="image/image3.png" alt="Slide 3" />
+            </li>
+        </ul>
+        <div class="had" style="text-align: center;">
+            <h1 style="margin-bottom: 50px;">Buy And Sell Old Mobile Phone</h1>
+            <div class="btn">
+                <a href="sell.php"><button class="sell">Sell</button></a>
+                <a href="buy.php"><button class="sell">Buy</button></a>
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap");
+        
+        /* 
+        body {
+            display: flex;
+            background: #333;
+            justify-content: flex-end;
+            align-items: flex-end;
+        } */
+        
+        .footer {
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+            position: relative;
+            width: 100%;
+            background: linear-gradient(230deg, black 10%, red 90%);
+            min-height: 100px;
+            padding: 20px 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 20px;
+            padding-bottom: 150px;
+        }
+        
+        .social-icon,
+        .menu {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-icon__item,
+        .menu__item {
+            list-style: none;
+        }
+        
+        .social-icon__link {
+            font-size: 2rem;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+        }
+        
+        .social-icon__link:hover {
+            transform: translateY(-10px);
+        }
+        
+        .menu__link {
+            font-size: 1.2rem;
+            color: #fff;
+            margin: 0 10px;
+            display: inline-block;
+            transition: 0.5s;
+            text-decoration: none;
+            opacity: 0.75;
+            font-weight: 300;
+        }
+        
+        .menu__link:hover {
+            opacity: 1;
+        }
+        
+        .footer p {
+            color: #fff;
+            margin: 15px 0 10px 0;
+            font-size: 1rem;
+            font-weight: 300;
+            text-align: center;
+        }
+        
+        </style>
+        <html>
+        
+        <body>
+            <footer class="footer">
+                <ul class="social-icon">
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-facebook"></ion-icon>
+                        </a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-twitter"></ion-icon>
+                        </a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a></li>
+                    <li class="social-icon__item"><a class="social-icon__link" href="#">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a></li>
+                </ul>
+                <ul class="menu">
+                    <li class="menu__item"><a class="menu__link" href="index.php">Home</a></li>
+                    <li class="menu__item"><a class="menu__link" href="about.php">About</a></li>
+                    <li class="menu__item"><a class="menu__link" href="services.php">Services</a></li>
+                    <li class="menu__item"><a class="menu__link" href="team.php">Team</a></li>
+                    <li class="menu__item"><a class="menu__link" href="contact.php">Contact</a></li>
+        
+                </ul>
+                <p>&copy;2022 | All Rights Reserved by <b> NIBOR ENTERPRISES </b></p>
+            </footer>
+            <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+            <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        </body>
+        
+        </html>
+</body>
+
+</html>
